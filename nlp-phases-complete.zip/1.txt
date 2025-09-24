@@ -1,0 +1,11 @@
+Text Cleaning: Remove noise (punctuation, HTML, special characters) and normalize casing.
+
+Tokenizing: Split text into individual units (words, subwords, or characters).
+
+Stop Word Removal: Filter out common words (e.g., “the”, “is”) that carry little semantic value.
+
+Stemming & Lemmatization: Reduce words to their base or root forms (e.g., “running” → “run”).
+
+Part-of-Speech Tagging: Assign each token a grammatical category (e.g., noun, verb, adjective).
+
+Named Entity Recognition: Identify and classify real-world entities (e.g., persons, locations, organizations).

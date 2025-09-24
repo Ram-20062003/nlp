@@ -1,0 +1,198 @@
+{
+  "morphological_analysis": {
+    "definition": "The study of word structure and formation, breaking words into morphemes (roots, prefixes, suffixes)",
+    "key_techniques": [
+      "Stemming - reducing words to root forms",
+      "Lemmatization - reducing words to dictionary forms with context",
+      "Morphological parsing - identifying word components",
+      "Word formation analysis"
+    ],
+    "python_libraries": [
+      "NLTK",
+      "spaCy",
+      "TextBlob"
+    ],
+    "practical_examples": [
+      {
+        "input": "running, runs, ran",
+        "process": "Stemming",
+        "output": "run, run, ran",
+        "library": "NLTK PorterStemmer"
+      },
+      {
+        "input": "better, good, mice",
+        "process": "Lemmatization",
+        "output": "good, good, mouse",
+        "library": "spaCy"
+      }
+    ],
+    "code_examples": {
+      "nltk_stemming": "\nimport nltk\nfrom nltk.stem import PorterStemmer\n\nstemmer = PorterStemmer()\nwords = ['running', 'runs', 'easily', 'fairly']\nstemmed = [stemmer.stem(word) for word in words]\nprint(stemmed)  # ['run', 'run', 'easili', 'fairli']\n            ",
+      "spacy_lemmatization": "\nimport spacy\n\nnlp = spacy.load('en_core_web_sm')\ndoc = nlp('better mice running quickly')\nlemmas = [token.lemma_ for token in doc]\nprint(lemmas)  # ['good', 'mouse', 'run', 'quickly']\n            "
+    }
+  },
+  "lexical_analysis": {
+    "definition": "Processing text to identify and categorize words (tokens) and assign grammatical roles",
+    "key_techniques": [
+      "Tokenization - splitting text into words/tokens",
+      "Part-of-Speech (POS) tagging - assigning grammatical categories",
+      "Stop word removal - filtering common words",
+      "Named Entity Recognition - identifying proper nouns"
+    ],
+    "python_libraries": [
+      "NLTK",
+      "spaCy",
+      "TextBlob"
+    ],
+    "practical_examples": [
+      {
+        "input": "Apple Inc. is looking at buying U.K. startup for $1 billion",
+        "process": "Tokenization",
+        "output": [
+          "Apple",
+          "Inc.",
+          "is",
+          "looking",
+          "at",
+          "buying",
+          "U.K.",
+          "startup",
+          "for",
+          "$",
+          "1",
+          "billion"
+        ],
+        "library": "spaCy"
+      },
+      {
+        "input": "The quick brown fox jumps",
+        "process": "POS Tagging",
+        "output": [
+          [
+            "The",
+            "DT"
+          ],
+          [
+            "quick",
+            "JJ"
+          ],
+          [
+            "brown",
+            "JJ"
+          ],
+          [
+            "fox",
+            "NN"
+          ],
+          [
+            "jumps",
+            "VBZ"
+          ]
+        ],
+        "library": "NLTK"
+      }
+    ],
+    "code_examples": {
+      "spacy_tokenization": "\nimport spacy\n\nnlp = spacy.load('en_core_web_sm')\ntext = \"Apple Inc. is buying U.K. startup for $1 billion\"\ndoc = nlp(text)\ntokens = [token.text for token in doc]\nprint(tokens)\n            ",
+      "nltk_pos_tagging": "\nimport nltk\nfrom nltk.tokenize import word_tokenize\n\ntext = \"The quick brown fox jumps\"\ntokens = word_tokenize(text)\npos_tags = nltk.pos_tag(tokens)\nprint(pos_tags)\n            "
+    }
+  },
+  "syntactic_analysis": {
+    "definition": "Analyzing grammatical structure and relationships between words in sentences",
+    "key_techniques": [
+      "Dependency parsing - identifying word dependencies",
+      "Constituency parsing - breaking sentences into phrases",
+      "Parse tree generation - creating hierarchical structures",
+      "Grammar rule checking - validating sentence structure"
+    ],
+    "python_libraries": [
+      "spaCy",
+      "NLTK",
+      "Stanford CoreNLP"
+    ],
+    "practical_examples": [
+      {
+        "input": "The cat sat on the mat",
+        "process": "Dependency Parsing",
+        "output": "sat(ROOT) -> cat(nsubj), on(prep) -> mat(pobj)",
+        "library": "spaCy"
+      },
+      {
+        "input": "John loves Mary",
+        "process": "Parse Tree",
+        "output": "[S [NP John] [VP [V loves] [NP Mary]]]",
+        "library": "NLTK"
+      }
+    ],
+    "code_examples": {
+      "spacy_dependency": "\nimport spacy\nfrom spacy import displacy\n\nnlp = spacy.load('en_core_web_sm')\ndoc = nlp(\"The cat sat on the mat\")\n\nfor token in doc:\n    print(f\"{token.text} -> {token.dep_} -> {token.head.text}\")\n\n# Visualize dependencies\ndisplacy.render(doc, style=\"dep\")\n            ",
+      "nltk_parsing": "\nimport nltk\nfrom nltk import CFG\n\ngrammar = CFG.from_string('''\nS -> NP VP\nNP -> 'John' | 'Mary'\nVP -> V NP\nV -> 'loves'\n''')\n\nparser = nltk.ChartParser(grammar)\nsentence = ['John', 'loves', 'Mary']\nfor tree in parser.parse(sentence):\n    print(tree)\n            "
+    }
+  },
+  "semantic_analysis": {
+    "definition": "Understanding meaning of words, phrases and sentences in context",
+    "key_techniques": [
+      "Word Sense Disambiguation - determining correct word meaning",
+      "Named Entity Recognition - identifying real-world entities",
+      "Semantic role labeling - identifying who did what to whom",
+      "Sentiment analysis - determining emotional tone"
+    ],
+    "python_libraries": [
+      "NLTK",
+      "spaCy",
+      "WordNet",
+      "TextBlob"
+    ],
+    "practical_examples": [
+      {
+        "input": "I went to the bank to deposit money",
+        "process": "Word Sense Disambiguation",
+        "output": "bank = financial institution (not river bank)",
+        "library": "NLTK Lesk Algorithm"
+      },
+      {
+        "input": "Barack Obama was born in Hawaii",
+        "process": "Named Entity Recognition",
+        "output": "Barack Obama: PERSON, Hawaii: LOCATION",
+        "library": "spaCy"
+      }
+    ],
+    "code_examples": {
+      "nltk_wsd": "\nimport nltk\nfrom nltk.wsd import lesk\nfrom nltk.tokenize import word_tokenize\n\nsentence = \"I went to the bank to deposit money\"\ntokens = word_tokenize(sentence)\nsense = lesk(tokens, 'bank')\nprint(f\"Best sense: {sense}\")\nprint(f\"Definition: {sense.definition()}\")\n            ",
+      "spacy_ner": "\nimport spacy\n\nnlp = spacy.load('en_core_web_sm')\ntext = \"Barack Obama was born in Hawaii in 1961\"\ndoc = nlp(text)\n\nfor ent in doc.ents:\n    print(f\"{ent.text}: {ent.label_}\")\n            "
+    }
+  },
+  "pragmatic_analysis": {
+    "definition": "Understanding intended meaning beyond literal interpretation, considering context and speaker intent",
+    "key_techniques": [
+      "Intent recognition - understanding speaker's purpose",
+      "Context analysis - using surrounding information",
+      "Implicature detection - finding implied meanings",
+      "Speech act recognition - identifying communication goals"
+    ],
+    "python_libraries": [
+      "spaCy",
+      "NLTK",
+      "Rasa",
+      "dialogflow"
+    ],
+    "practical_examples": [
+      {
+        "input": "Can you pass the salt?",
+        "process": "Intent Recognition",
+        "output": "Intent: REQUEST (not asking about ability)",
+        "library": "Rule-based + ML"
+      },
+      {
+        "input": "It's cold in here",
+        "process": "Implicature Detection",
+        "output": "Implied: Please close the window/turn up heat",
+        "library": "Context analysis"
+      }
+    ],
+    "code_examples": {
+      "intent_recognition": "\n# Simple intent recognition example\nimport re\n\ndef analyze_intent(text):\n    text = text.lower()\n\n    # Request patterns\n    if re.search(r'can you|could you|would you', text):\n        return \"REQUEST\"\n    elif re.search(r'what|where|when|how|why', text):\n        return \"QUESTION\"\n    elif re.search(r'hello|hi|hey', text):\n        return \"GREETING\"\n    else:\n        return \"STATEMENT\"\n\nexamples = [\n    \"Can you pass the salt?\",\n    \"What time is it?\", \n    \"Hello there!\",\n    \"It's cold in here\"\n]\n\nfor example in examples:\n    intent = analyze_intent(example)\n    print(f\"'{example}' -> {intent}\")\n            ",
+      "context_analysis": "\n# Context-based pragmatic analysis\ndef analyze_pragmatics(text, context=None):\n    analysis = {\n        'literal_meaning': text,\n        'pragmatic_meaning': None,\n        'speech_act': None\n    }\n\n    text_lower = text.lower()\n\n    # Analyze speech acts\n    if '?' in text:\n        if text_lower.startswith(('can you', 'could you', 'would you')):\n            analysis['speech_act'] = 'REQUEST'\n            analysis['pragmatic_meaning'] = 'Polite request for action'\n        else:\n            analysis['speech_act'] = 'QUESTION'\n            analysis['pragmatic_meaning'] = 'Seeking information'\n    elif text_lower.startswith(('it's', 'this is')):\n        analysis['speech_act'] = 'ASSERTION'\n        if 'cold' in text_lower or 'hot' in text_lower:\n            analysis['pragmatic_meaning'] = 'Indirect request to adjust temperature'\n\n    return analysis\n\n# Examples\nexamples = [\n    \"Can you pass the salt?\",\n    \"It's cold in here\",\n    \"What time is it?\"\n]\n\nfor example in examples:\n    result = analyze_pragmatics(example)\n    print(f\"Text: {example}\")\n    print(f\"Speech Act: {result['speech_act']}\")\n    print(f\"Pragmatic Meaning: {result['pragmatic_meaning']}\")\n    print(\"---\")\n            "
+    }
+  }
+}

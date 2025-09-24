@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Phases - Interactive Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <h1 class="header__title">Natural Language Processing</h1>
+                    <p class="header__subtitle">Interactive Guide to the 6 Core Phases</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="container">
+                <div class="nav__tabs">
+                    <button class="nav__tab active" data-tab="overview">Overview</button>
+                    <button class="nav__tab" data-tab="morphological">Morphological</button>
+                    <button class="nav__tab" data-tab="lexical">Lexical</button>
+                    <button class="nav__tab" data-tab="syntactic">Syntactic</button>
+                    <button class="nav__tab" data-tab="semantic">Semantic</button>
+                    <button class="nav__tab" data-tab="pragmatic">Pragmatic</button>
+                    <button class="nav__tab" data-tab="discourse">Discourse</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Overview Section -->
+                <section class="section active" id="overview">
+                    <div class="overview">
+                        <div class="overview__intro">
+                            <h2>The Six Phases of Natural Language Processing</h2>
+                            <p>Natural Language Processing involves multiple phases that progressively analyze and understand human language, from basic word structure to complex discourse understanding across multiple sentences.</p>
+                        </div>
+                        
+                        <div class="phases-grid">
+                            <div class="phase-card" data-phase="morphological">
+                                <div class="phase-card__header">
+                                    <h3>Morphological Analysis</h3>
+                                    <span class="phase-card__number">1</span>
+                                </div>
+                                <p>Study of word structure and formation, breaking words into morphemes</p>
+                                <div class="phase-card__techniques">
+                                    <span class="technique-tag">Stemming</span>
+                                    <span class="technique-tag">Lemmatization</span>
+                                </div>
+                            </div>
+
+                            <div class="phase-card" data-phase="lexical">
+                                <div class="phase-card__header">
+                                    <h3>Lexical Analysis</h3>
+                                    <span class="phase-card__number">2</span>
+                                </div>
+                                <p>Processing text to identify and categorize words and assign grammatical roles</p>
+                                <div class="phase-card__techniques">
+                                    <span class="technique-tag">Tokenization</span>
+                                    <span class="technique-tag">POS Tagging</span>
+                                </div>
+                            </div>
+
+                            <div class="phase-card" data-phase="syntactic">
+                                <div class="phase-card__header">
+                                    <h3>Syntactic Analysis</h3>
+                                    <span class="phase-card__number">3</span>
+                                </div>
+                                <p>Analyzing grammatical structure and relationships between words</p>
+                                <div class="phase-card__techniques">
+                                    <span class="technique-tag">Dependency Parsing</span>
+                                    <span class="technique-tag">Parse Trees</span>
+                                </div>
+                            </div>
+
+                            <div class="phase-card" data-phase="semantic">
+                                <div class="phase-card__header">
+                                    <h3>Semantic Analysis</h3>
+                                    <span class="phase-card__number">4</span>
+                                </div>
+                                <p>Understanding meaning of words, phrases and sentences in context</p>
+                                <div class="phase-card__techniques">
+                                    <span class="technique-tag">Word Sense Disambiguation</span>
+                                    <span class="technique-tag">NER</span>
+                                </div>
+                            </div>
+
+                            <div class="phase-card" data-phase="pragmatic">
+                                <div class="phase-card__header">
+                                    <h3>Pragmatic Analysis</h3>
+                                    <span class="phase-card__number">5</span>
+                                </div>
+                                <p>Understanding intended meaning beyond literal interpretation</p>
+                                <div class="phase-card__techniques">
+                                    <span class="technique-tag">Intent Recognition</span>
+                                    <span class="technique-tag">Context Analysis</span>
+                                </div>
+                            </div>
+
+                            <div class="phase-card" data-phase="discourse">
+                                <div class="phase-card__header">
+                                    <h3>Discourse Integration</h3>
+                                    <span class="phase-card__number">6</span>
+                                </div>
+                                <p>Understanding relationships between sentences and maintaining context across text units</p>
+                                <div class="phase-card__techniques">
+                                    <span class="technique-tag">Coreference Resolution</span>
+                                    <span class="technique-tag">Coherence Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Phase Sections -->
+                <section class="section" id="morphological">
+                    <div class="phase-content">
+                        <div class="phase-header">
+                            <h2>Morphological Analysis</h2>
+                            <p class="phase-definition">The study of word structure and formation, breaking words into morphemes (roots, prefixes, suffixes)</p>
+                        </div>
+
+                        <div class="content-grid">
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Key Techniques</h3>
+                                    <ul class="techniques-list">
+                                        <li><strong>Stemming</strong> - reducing words to root forms</li>
+                                        <li><strong>Lemmatization</strong> - reducing words to dictionary forms with context</li>
+                                        <li><strong>Morphological parsing</strong> - identifying word components</li>
+                                        <li><strong>Word formation analysis</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Interactive Demo</h3>
+                                    <div class="demo-section">
+                                        <div class="form-group">
+                                            <label class="form-label">Enter words (comma-separated):</label>
+                                            <input type="text" class="form-control" id="morphological-input" 
+                                                   placeholder="running, better, mice, easily" value="running, better, mice, easily">
+                                        </div>
+                                        <div class="demo-buttons">
+                                            <button class="btn btn--primary" onclick="runStemming()">Run Stemming</button>
+                                            <button class="btn btn--secondary" onclick="runLemmatization()">Run Lemmatization</button>
+                                        </div>
+                                        <div class="demo-output" id="morphological-output"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h3>Practical Examples</h3>
+                            <div class="example-cards">
+                                <div class="example-card">
+                                    <h4>NLTK Stemming</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">running, runs, ran</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">run, run, ran</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="example-card">
+                                    <h4>spaCy Lemmatization</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">better, good, mice</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">good, good, mouse</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Code Examples</h3>
+                            <div class="code-tabs">
+                                <button class="code-tab active" data-code="nltk-stem">NLTK Stemming</button>
+                                <button class="code-tab" data-code="spacy-lemma">spaCy Lemmatization</button>
+                            </div>
+                            <div class="code-content">
+                                <pre class="code-block active" id="nltk-stem"><code class="language-python">import nltk
+from nltk.stem import PorterStemmer
+
+stemmer = PorterStemmer()
+words = ['running', 'runs', 'easily', 'fairly']
+stemmed = [stemmer.stem(word) for word in words]
+print(stemmed)  # ['run', 'run', 'easili', 'fairli']</code></pre>
+                                <pre class="code-block" id="spacy-lemma"><code class="language-python">import spacy
+
+nlp = spacy.load('en_core_web_sm')
+doc = nlp('better mice running quickly')
+lemmas = [token.lemma_ for token in doc]
+print(lemmas)  # ['good', 'mouse', 'run', 'quickly']</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="lexical">
+                    <div class="phase-content">
+                        <div class="phase-header">
+                            <h2>Lexical Analysis</h2>
+                            <p class="phase-definition">Processing text to identify and categorize words (tokens) and assign grammatical roles</p>
+                        </div>
+
+                        <div class="content-grid">
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Key Techniques</h3>
+                                    <ul class="techniques-list">
+                                        <li><strong>Tokenization</strong> - splitting text into words/tokens</li>
+                                        <li><strong>Part-of-Speech (POS) tagging</strong> - assigning grammatical categories</li>
+                                        <li><strong>Stop word removal</strong> - filtering common words</li>
+                                        <li><strong>Named Entity Recognition</strong> - identifying proper nouns</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Interactive Demo</h3>
+                                    <div class="demo-section">
+                                        <div class="form-group">
+                                            <label class="form-label">Enter text:</label>
+                                            <input type="text" class="form-control" id="lexical-input" 
+                                                   placeholder="The quick brown fox jumps" value="The quick brown fox jumps">
+                                        </div>
+                                        <div class="demo-buttons">
+                                            <button class="btn btn--primary" onclick="runTokenization()">Tokenize</button>
+                                            <button class="btn btn--secondary" onclick="runPOSTagging()">POS Tagging</button>
+                                        </div>
+                                        <div class="demo-output" id="lexical-output"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h3>Practical Examples</h3>
+                            <div class="example-cards">
+                                <div class="example-card">
+                                    <h4>spaCy Tokenization</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">Apple Inc. is looking at buying U.K. startup for $1 billion</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">["Apple", "Inc.", "is", "looking", "at", "buying", "U.K.", "startup", "for", "$", "1", "billion"]</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="example-card">
+                                    <h4>NLTK POS Tagging</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">The quick brown fox jumps</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">[("The", "DT"), ("quick", "JJ"), ("brown", "JJ"), ("fox", "NN"), ("jumps", "VBZ")]</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Code Examples</h3>
+                            <div class="code-tabs">
+                                <button class="code-tab active" data-code="spacy-token">spaCy Tokenization</button>
+                                <button class="code-tab" data-code="nltk-pos">NLTK POS Tagging</button>
+                            </div>
+                            <div class="code-content">
+                                <pre class="code-block active" id="spacy-token"><code class="language-python">import spacy
+
+nlp = spacy.load('en_core_web_sm')
+text = "Apple Inc. is buying U.K. startup for $1 billion"
+doc = nlp(text)
+tokens = [token.text for token in doc]
+print(tokens)</code></pre>
+                                <pre class="code-block" id="nltk-pos"><code class="language-python">import nltk
+from nltk.tokenize import word_tokenize
+
+text = "The quick brown fox jumps"
+tokens = word_tokenize(text)
+pos_tags = nltk.pos_tag(tokens)
+print(pos_tags)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="syntactic">
+                    <div class="phase-content">
+                        <div class="phase-header">
+                            <h2>Syntactic Analysis</h2>
+                            <p class="phase-definition">Analyzing grammatical structure and relationships between words in sentences</p>
+                        </div>
+
+                        <div class="content-grid">
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Key Techniques</h3>
+                                    <ul class="techniques-list">
+                                        <li><strong>Dependency parsing</strong> - identifying word dependencies</li>
+                                        <li><strong>Constituency parsing</strong> - breaking sentences into phrases</li>
+                                        <li><strong>Parse tree generation</strong> - creating hierarchical structures</li>
+                                        <li><strong>Grammar rule checking</strong> - validating sentence structure</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Interactive Demo</h3>
+                                    <div class="demo-section">
+                                        <div class="form-group">
+                                            <label class="form-label">Enter sentence:</label>
+                                            <input type="text" class="form-control" id="syntactic-input" 
+                                                   placeholder="The cat sat on the mat" value="The cat sat on the mat">
+                                        </div>
+                                        <div class="demo-buttons">
+                                            <button class="btn btn--primary" onclick="runDependencyParsing()">Dependency Parsing</button>
+                                            <button class="btn btn--secondary" onclick="runParseTree()">Parse Tree</button>
+                                        </div>
+                                        <div class="demo-output" id="syntactic-output"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h3>Practical Examples</h3>
+                            <div class="example-cards">
+                                <div class="example-card">
+                                    <h4>spaCy Dependency Parsing</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">The cat sat on the mat</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">sat(ROOT) → cat(nsubj), on(prep) → mat(pobj)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="example-card">
+                                    <h4>NLTK Parse Tree</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">John loves Mary</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">[S [NP John] [VP [V loves] [NP Mary]]]</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Code Examples</h3>
+                            <div class="code-tabs">
+                                <button class="code-tab active" data-code="spacy-dep">spaCy Dependencies</button>
+                                <button class="code-tab" data-code="nltk-parse">NLTK Parsing</button>
+                            </div>
+                            <div class="code-content">
+                                <pre class="code-block active" id="spacy-dep"><code class="language-python">import spacy
+from spacy import displacy
+
+nlp = spacy.load('en_core_web_sm')
+doc = nlp("The cat sat on the mat")
+
+for token in doc:
+    print(f"{token.text} -> {token.dep_} -> {token.head.text}")
+
+# Visualize dependencies
+displacy.render(doc, style="dep")</code></pre>
+                                <pre class="code-block" id="nltk-parse"><code class="language-python">import nltk
+from nltk import CFG
+
+grammar = CFG.from_string('''
+S -> NP VP
+NP -> 'John' | 'Mary'
+VP -> V NP
+V -> 'loves'
+''')
+
+parser = nltk.ChartParser(grammar)
+sentence = ['John', 'loves', 'Mary']
+for tree in parser.parse(sentence):
+    print(tree)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="semantic">
+                    <div class="phase-content">
+                        <div class="phase-header">
+                            <h2>Semantic Analysis</h2>
+                            <p class="phase-definition">Understanding meaning of words, phrases and sentences in context</p>
+                        </div>
+
+                        <div class="content-grid">
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Key Techniques</h3>
+                                    <ul class="techniques-list">
+                                        <li><strong>Word Sense Disambiguation</strong> - determining correct word meaning</li>
+                                        <li><strong>Named Entity Recognition</strong> - identifying real-world entities</li>
+                                        <li><strong>Semantic role labeling</strong> - identifying who did what to whom</li>
+                                        <li><strong>Sentiment analysis</strong> - determining emotional tone</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Interactive Demo</h3>
+                                    <div class="demo-section">
+                                        <div class="form-group">
+                                            <label class="form-label">Enter text:</label>
+                                            <input type="text" class="form-control" id="semantic-input" 
+                                                   placeholder="Barack Obama was born in Hawaii" value="Barack Obama was born in Hawaii">
+                                        </div>
+                                        <div class="demo-buttons">
+                                            <button class="btn btn--primary" onclick="runNER()">Named Entity Recognition</button>
+                                            <button class="btn btn--secondary" onclick="runWSD()">Word Sense Disambiguation</button>
+                                        </div>
+                                        <div class="demo-output" id="semantic-output"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h3>Practical Examples</h3>
+                            <div class="example-cards">
+                                <div class="example-card">
+                                    <h4>Word Sense Disambiguation</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">I went to the bank to deposit money</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">bank = financial institution (not river bank)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="example-card">
+                                    <h4>Named Entity Recognition</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">Barack Obama was born in Hawaii</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">Barack Obama: PERSON, Hawaii: LOCATION</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Code Examples</h3>
+                            <div class="code-tabs">
+                                <button class="code-tab active" data-code="nltk-wsd">NLTK WSD</button>
+                                <button class="code-tab" data-code="spacy-ner">spaCy NER</button>
+                            </div>
+                            <div class="code-content">
+                                <pre class="code-block active" id="nltk-wsd"><code class="language-python">import nltk
+from nltk.wsd import lesk
+from nltk.tokenize import word_tokenize
+
+sentence = "I went to the bank to deposit money"
+tokens = word_tokenize(sentence)
+sense = lesk(tokens, 'bank')
+print(f"Best sense: {sense}")
+print(f"Definition: {sense.definition()}")</code></pre>
+                                <pre class="code-block" id="spacy-ner"><code class="language-python">import spacy
+
+nlp = spacy.load('en_core_web_sm')
+text = "Barack Obama was born in Hawaii in 1961"
+doc = nlp(text)
+
+for ent in doc.ents:
+    print(f"{ent.text}: {ent.label_}")</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="pragmatic">
+                    <div class="phase-content">
+                        <div class="phase-header">
+                            <h2>Pragmatic Analysis</h2>
+                            <p class="phase-definition">Understanding intended meaning beyond literal interpretation, considering context and speaker intent</p>
+                        </div>
+
+                        <div class="content-grid">
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Key Techniques</h3>
+                                    <ul class="techniques-list">
+                                        <li><strong>Intent recognition</strong> - understanding speaker's purpose</li>
+                                        <li><strong>Context analysis</strong> - using surrounding information</li>
+                                        <li><strong>Implicature detection</strong> - finding implied meanings</li>
+                                        <li><strong>Speech act recognition</strong> - identifying communication goals</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Interactive Demo</h3>
+                                    <div class="demo-section">
+                                        <div class="form-group">
+                                            <label class="form-label">Enter text:</label>
+                                            <input type="text" class="form-control" id="pragmatic-input" 
+                                                   placeholder="Can you pass the salt?" value="Can you pass the salt?">
+                                        </div>
+                                        <div class="demo-buttons">
+                                            <button class="btn btn--primary" onclick="runIntentRecognition()">Intent Recognition</button>
+                                            <button class="btn btn--secondary" onclick="runContextAnalysis()">Context Analysis</button>
+                                        </div>
+                                        <div class="demo-output" id="pragmatic-output"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h3>Practical Examples</h3>
+                            <div class="example-cards">
+                                <div class="example-card">
+                                    <h4>Intent Recognition</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">Can you pass the salt?</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">Intent: REQUEST (not asking about ability)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="example-card">
+                                    <h4>Implicature Detection</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">It's cold in here</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">Implied: Please close the window/turn up heat</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Code Examples</h3>
+                            <div class="code-tabs">
+                                <button class="code-tab active" data-code="intent-rec">Intent Recognition</button>
+                                <button class="code-tab" data-code="context-ana">Context Analysis</button>
+                            </div>
+                            <div class="code-content">
+                                <pre class="code-block active" id="intent-rec"><code class="language-python"># Simple intent recognition example
+import re
+
+def analyze_intent(text):
+    text = text.lower()
+    
+    # Request patterns
+    if re.search(r'can you|could you|would you', text):
+        return "REQUEST"
+    elif re.search(r'what|where|when|how|why', text):
+        return "QUESTION"
+    elif re.search(r'hello|hi|hey', text):
+        return "GREETING"
+    else:
+        return "STATEMENT"
+
+examples = [
+    "Can you pass the salt?",
+    "What time is it?", 
+    "Hello there!",
+    "It's cold in here"
+]
+
+for example in examples:
+    intent = analyze_intent(example)
+    print(f"'{example}' -> {intent}")</code></pre>
+                                <pre class="code-block" id="context-ana"><code class="language-python"># Context-based pragmatic analysis
+def analyze_pragmatics(text, context=None):
+    analysis = {
+        'literal_meaning': text,
+        'pragmatic_meaning': None,
+        'speech_act': None
+    }
+    
+    text_lower = text.lower()
+    
+    # Analyze speech acts
+    if '?' in text:
+        if text_lower.startswith(('can you', 'could you', 'would you')):
+            analysis['speech_act'] = 'REQUEST'
+            analysis['pragmatic_meaning'] = 'Polite request for action'
+        else:
+            analysis['speech_act'] = 'QUESTION'
+            analysis['pragmatic_meaning'] = 'Seeking information'
+    elif text_lower.startswith(('it\'s', 'this is')):
+        analysis['speech_act'] = 'ASSERTION'
+        if 'cold' in text_lower or 'hot' in text_lower:
+            analysis['pragmatic_meaning'] = 'Indirect request to adjust temperature'
+    
+    return analysis</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="discourse">
+                    <div class="phase-content">
+                        <div class="phase-header">
+                            <h2>Discourse Integration</h2>
+                            <p class="phase-definition">Understanding how multiple sentences form coherent discourse, analyzing relationships between sentences and maintaining context across larger text units</p>
+                        </div>
+
+                        <div class="content-grid">
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Key Techniques</h3>
+                                    <ul class="techniques-list">
+                                        <li><strong>Coreference resolution</strong> - identifying expressions that refer to the same entity</li>
+                                        <li><strong>Discourse segmentation</strong> - breaking text into coherent discourse segments</li>
+                                        <li><strong>Coherence analysis</strong> - measuring how well sentences stick together</li>
+                                        <li><strong>Anaphora resolution</strong> - linking pronouns to their antecedents</li>
+                                        <li><strong>Discourse parsing</strong> - identifying discourse structure relationships</li>
+                                        <li><strong>Topic segmentation</strong> - dividing text into topic-based segments</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card__body">
+                                    <h3>Interactive Demo</h3>
+                                    <div class="demo-section">
+                                        <div class="form-group">
+                                            <label class="form-label">Enter multi-sentence text:</label>
+                                            <textarea class="form-control" id="discourse-input" rows="3" 
+                                                      placeholder="John went to the store. He bought milk and bread. The groceries were expensive.">John went to the store. He bought milk and bread. The groceries were expensive.</textarea>
+                                        </div>
+                                        <div class="demo-buttons">
+                                            <button class="btn btn--primary" onclick="runCoreferenceResolution()">Coreference Resolution</button>
+                                            <button class="btn btn--secondary" onclick="runCoherenceAnalysis()">Coherence Analysis</button>
+                                            <button class="btn btn--outline" onclick="runDiscourseSegmentation()">Discourse Segmentation</button>
+                                        </div>
+                                        <div class="demo-output" id="discourse-output"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h3>Practical Examples</h3>
+                            <div class="example-cards">
+                                <div class="example-card">
+                                    <h4>Coreference Resolution</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">John went to the store. He bought milk and bread. The groceries were expensive.</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">John=He=person who bought groceries, milk and bread=The groceries</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="example-card">
+                                    <h4>Discourse Segmentation</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">The company announced record profits. Stock prices soared. However, layoffs are expected next quarter.</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">Segment 1: Profit announcement, Segment 2: Stock reaction, Segment 3: Future concerns</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="example-card">
+                                    <h4>Anaphora Resolution</h4>
+                                    <div class="example-io">
+                                        <div class="io-item">
+                                            <span class="io-label">Input:</span>
+                                            <span class="io-value">Alice loves programming. She codes every day. Programming is her passion.</span>
+                                        </div>
+                                        <div class="io-item">
+                                            <span class="io-label">Output:</span>
+                                            <span class="io-value">She → Alice, her → Alice's</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Code Examples</h3>
+                            <div class="code-tabs">
+                                <button class="code-tab active" data-code="coreference-simple">Simple Coreference</button>
+                                <button class="code-tab" data-code="coherence-analysis">Coherence Analysis</button>
+                                <button class="code-tab" data-code="coreference-advanced">Advanced Coreference</button>
+                            </div>
+                            <div class="code-content">
+                                <pre class="code-block active" id="coreference-simple"><code class="language-python">import spacy
+from spacy import displacy
+
+# Load model with coreference resolution
+nlp = spacy.load('en_core_web_sm')
+text = "John went to the store. He bought milk."
+doc = nlp(text)
+
+# Simple pronoun resolution using dependency parsing
+for token in doc:
+    if token.pos_ == 'PRON':
+        # Find potential antecedents (simplified)
+        for sent in doc.sents:
+            for ent in sent.ents:
+                if ent.label_ == 'PERSON':
+                    print(f"{token.text} -> {ent.text}")
+                    break</code></pre>
+                                <pre class="code-block" id="coherence-analysis"><code class="language-python"># Discourse coherence analysis using sentence embeddings
+from sentence_transformers import SentenceTransformer
+import numpy as np
+from scipy.spatial.distance import cosine
+
+def analyze_discourse_coherence(text):
+    # Initialize sentence transformer
+    model = SentenceTransformer('all-MiniLM-L6-v2')
+    
+    # Split into sentences
+    sentences = text.split('.')
+    sentences = [s.strip() for s in sentences if s.strip()]
+    
+    # Get sentence embeddings
+    embeddings = model.encode(sentences)
+    
+    # Calculate coherence scores between adjacent sentences
+    coherence_scores = []
+    for i in range(len(embeddings) - 1):
+        similarity = 1 - cosine(embeddings[i], embeddings[i + 1])
+        coherence_scores.append(similarity)
+    
+    return {
+        'sentences': sentences,
+        'coherence_scores': coherence_scores,
+        'average_coherence': np.mean(coherence_scores)
+    }
+
+# Example usage
+text = "John loves programming. He codes every day. Programming is his passion."
+result = analyze_discourse_coherence(text)
+print(f"Average coherence: {result['average_coherence']:.3f}")</code></pre>
+                                <pre class="code-block" id="coreference-advanced"><code class="language-python"># Simple coreference detection using rule-based approach
+import re
+from collections import defaultdict
+
+def simple_coreference_detection(text):
+    # Simple patterns for coreference
+    entities = {}
+    coref_chains = defaultdict(list)
+    
+    # Find named entities (simplified)
+    entity_pattern = r'\b[A-Z][a-z]+\b'  # Simple proper noun detection
+    entities_found = re.findall(entity_pattern, text)
+    
+    # Find pronouns and their positions
+    pronoun_pattern = r'\b(he|she|it|they|him|her|them|his|hers|its|their)\b'
+    
+    # Simple resolution: link pronouns to nearest preceding entity
+    sentences = text.split('.')
+    current_entity = None
+    
+    for i, sentence in enumerate(sentences):
+        sentence = sentence.strip()
+        if not sentence:
+            continue
+            
+        # Check for entities in this sentence
+        for entity in entities_found:
+            if entity in sentence:
+                current_entity = entity
+                coref_chains[entity].append(f"Sentence {i+1}: {entity}")
+                break
+        
+        # Check for pronouns
+        pronouns_in_sentence = re.findall(pronoun_pattern, sentence.lower())
+        for pronoun in pronouns_in_sentence:
+            if current_entity:
+                coref_chains[current_entity].append(f"Sentence {i+1}: {pronoun}")
+    
+    return coref_chains
+
+# Example
+text = "John went to the store. He bought milk and bread. His groceries were expensive."
+chains = simple_coreference_detection(text)
+for entity, mentions in chains.items():
+    print(f"{entity}: {mentions}")</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="applications-section">
+                            <h3>Real-World Applications</h3>
+                            <div class="applications-grid">
+                                <div class="application-item">
+                                    <h4>Document Summarization</h4>
+                                    <p>Maintaining entity consistency across summary segments</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Machine Translation</h4>
+                                    <p>Preserving referential relationships in target language</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Question Answering</h4>
+                                    <p>Understanding context across paragraphs and documents</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Chatbots</h4>
+                                    <p>Maintaining conversation context and entity references</p>
+                                </div>
+                                <div class="application-item">
+                                    <h4>Information Extraction</h4>
+                                    <p>Linking related information across multiple sentences</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="challenges-section">
+                            <h3>Key Challenges</h3>
+                            <div class="challenges-list">
+                                <div class="challenge-item">
+                                    <span class="challenge-icon">⚠️</span>
+                                    <div>
+                                        <strong>Ambiguous pronoun resolution</strong>
+                                        <p>Multiple possible antecedents for pronouns</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-icon">📏</span>
+                                    <div>
+                                        <strong>Long-distance dependencies</strong>
+                                        <p>Entities mentioned far apart in text</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-icon">🧠</span>
+                                    <div>
+                                        <strong>Implicit relationships</strong>
+                                        <p>Bridging inferences required for understanding</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-icon">📝</span>
+                                    <div>
+                                        <strong>Genre-specific patterns</strong>
+                                        <p>Different discourse structures across text types</p>
+                                    </div>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-icon">🌍</span>
+                                    <div>
+                                        <strong>Multilingual coreference</strong>
+                                        <p>Language-specific resolution patterns</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
